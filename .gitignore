@@ -1,8 +1,11 @@
 01/node_modules
 01/dist
+01/.parcel-cache
 
 02/node_modules
 02/dist
+02/.parcel-cache
 
 03/node_modules
 03/dist
+03/.parcel-cache
