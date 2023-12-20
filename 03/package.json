@@ -1,7 +1,6 @@
 {
   "name": "03",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "dev": "parcel ./index.html",
@@ -9,7 +8,9 @@
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
+  "keywords": [],
+  "description": "",
+  "devDependencies": {
     "parcel": "^2.10.3"
   }
 }
