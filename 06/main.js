@@ -507,24 +507,189 @@
 // // console.log(names);
 // console.log(namesArray);
 
+// .reverse()
+// 대상 배열의 순서를 반환한다
+// 대상 배열 원본이 변경된다
+// const arr = ['A', 'B', 'C'];
+// const reversed = arr.reverse();
 
+// console.log(reversed);
+// console.log(arr);
+
+// .shift()
+// 대상 배열에서 첫번째 요소를 제거하고, 제거한 요소를 반환한다
+// 대상 배열 원본이 변경된다.
+// const arr = ['A', 'B', 'C'];
+// console.log(arr.shift());
+// console.log(arr);
+
+// .slice()
+// 대상 배열의 일부를 추출해 새로운 배열을 반환한다
+// 두 번째 인수 직전까지 추출하고, 두번찌 인수를 생략하면 대상 배열의 끝까지를 추출한다
+// const arr = ['A', 'B', 'C', 'D', 'E', 'F', 'G'];
+
+// console.log(arr.slice(0,3));
+// console.log(arr.slice(4, -1));
+// console.log(arr.slice(4));
+// console.log(arr);
+
+// . some()
+// 대상 배열의 어떤 요소라도 콜백 테스트를 통과하는지 확인한다
+// const arr = [1, 2, 3, 4];
+// const isValid = arr.some(item => item > 3);
+// console.log(isValid);
+
+// .sort()
+// 대상 배열을 콜백의 반환 값(음수, 양수, 0)에 따라 정렬한다
+// 콜백을 제공하지 않으면, 요소를 문자열로 반환하고 유니코드 코드 포인트 순서로 정렬한다
+// 대상 배열 원본이 변경된다
+// const numbers = [4, 17, 2, 103, 3, 1, 0];
+
+// numbers.sort();
+// console.log(numbers);
+
+// numbers.sort((a, b) => a - b); // 작은 숫자 -> 큰 숫자
+// console.log(numbers);
+
+// numbers.sort((a, b) => b -a); // 큰 숫자 -> 작은 숫자
+// console.log(numbers);
+
+// const users = [
+//     {name: 'Neo', age: 85},
+//     {name: 'Amy', age: 22},
+//     {name: 'Lewis', age: 11}
+// ];
+// users.sort((a, b) => a.age - b.age);
+// console.log(users);
+
+// // users.sort((a, b) => b.age - a.age);
+// // console.log(users);
+
+// .splice()
+// 대상 배열에 요소를 추가하거나 삭제하거나 교체한다
+// 대상 배열 원본이 변경된다
+// const arr = ['A', 'B', 'C'];
+// // arr.splice(2, 0, 'x'); // 인덱스 번호, 삭제하려는 아이템 갯수, 추가/변경/삭제
+// // arr.splice(1, 2, 'x', 'y'); 
+// arr.splice(1, 1, 'x'); 
+// console.log(arr);
+
+// .unshift()
+// 새로운 요소를 대상 배열의 맨 앞에 추가하고 새로운 배열의 길이를 반환한다
+// 대상 배열 원본이 변경된다
+// const arr = ['A', 'B', 'C'];
+// console.log(arr.unshift('x'));
+// console.log(arr);
+
+// Array.from()
+// 유사 배열(Array-like)을 실제 배열로 반환한다
+// const arrayLike = {
+//     0: 'A', 
+//     1: 'B', 
+//     2: 'C',
+//     length: 3
+// }
+// console.log(arrayLike.constructro === Array);
+// console.log(arrayLike.constructor === Object);
+
+// // arrayLike.forEach(item => console.log(item));
+// Array.from(arrayLike).forEach(item => console.log(item));
+
+// Array.isArray()
+// 배열 데이터인지 확인한다
+// const arr = ['A', 'B', 'C'];
+// const arrayLike = {
+//     0: 'A',
+//     1: 'B', 
+//     2: 'C',
+//     length: 3
+// }
+// console.log(Array.isArray(arr)); // true
+// console.log(Array.isArray(arrayLike)); // false
 
 //--------------------------------------------------------------------------
 
 /** 7. 객체 */
 
+// Object.assign()
+// 하나 이상의 출처(Source) 객체로부터 대상(Target) 객체로 복사하고 대상 객체를 반환한다
+// const target = {a: 1, b: 2};
+// const source1 = {b: 3, c: 4};
+// const source2 = {c: 5, d: 6};
+// // const result = Object.assign({}, target, source1, source2); // 대상객체, 출처객체(1개 이상)
+// const result = {
+//     ...target,
+//     ...source1,
+//     ...source2
+// }
 
+// console.log(target);
+// console.log(result);
 
+// Object.entries()
+// 주어진 객체의 각 속성과 값으로 하나의 배열 만들어 요소로 추가한 2차원 배열을 반환한다
+// const user = {
+//     name: 'Roze',
+//     age: 85,
+//     isValid: true,
+//     email: 'rexlam@naver.com'
+// }
+// console.log(Object.entries(user));
+// for(const [key,value] of Object.entries(user)){
+//     console.log(key, value);
+// }
 
+// Object.keys()
+// 주어진 객체의 속성 이름을 나열한 배열을 반환한다
+// const user = {
+//     name: 'Roze',
+//     age: 85,
+//     isValid: true,
+//     email: 'rexlam@naver.com'
+// }
+// console.log(Object.keys(user));
 
-
+// Objcet.values()
+// 주어진 객체의 속성 값을 나열한 배열을 반환한다
+// const user = {
+//     name: 'Roze',
+//     age: 85,
+//     isValid: true,
+//     email: 'rexlam@naver.com'
+// }
+// console.log(Object.values(user));
 
 //--------------------------------------------------------------------------
 
-/** 8. JSON */
+/** 8. JSON(JavaScript Object Notation) */
 
+// 데이터 전달을 위한 표준 포맷
+// 문자, 숫자, 불린, Null, 객체, 배열만 사용
+// 문자는 큰 따옴표만 사용
+// 후행 쉼표 사용 불가
+// .json 확장자 사용
 
+// JSON.stringify() - 데이터를 JSON 문자로 변환한다
+// JSON.parse() - JSON문자를 분석해 데이터로 변환한다.
 
+// console.log(JSON.stringify('Hello world!')); // '"Hello world!"'
+// console.log(JSON.stringify(123));
+// console.log(JSON.stringify(false));
+// console.log(JSON.stringify(null));
+// console.log(JSON.stringify({name: 'ROZE', age: 85}));
+// console.log(JSON.stringify([1, 2, 3]));
+
+// console.log("//--------------------------------------//");
+
+// console.log(JSON.parse('"Hello World!"'));
+// console.log(JSON.parse('123'));
+// console.log(JSON.parse('false'));
+// console.log(JSON.parse('null'));
+// console.log(JSON.parse('{"name":"ROZE","age":85}'));
+// console.log(JSON.parse('[1, 2, 3]'));
+
+import abc from'./test.json'
+console.log(abc);
 
 
 
