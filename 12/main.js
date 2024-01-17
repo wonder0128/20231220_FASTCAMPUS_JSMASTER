@@ -230,8 +230,88 @@
 
 //--------------------------------------------
 
-/** 메모리 누수 */
+/** 메모리 누수(Memory Leak) */
+
+// 더 이상 필요하지 않은 데이터가 해제되지 못하고 메모리를 차지되는 현상
+
+// - 불필요한 전역 변수 사용
+// window.hello = 'Hello world!';
+// window.roze = {name: 'Roze', age: 31};
+
+// - 분리된 노드 참조
+// const btn = document.querySelector('button');
+// // const parent = document.querySelector('.parent');
+
+// btn.addEventListener('click', () => {
+//   const parent = document.querySelector('.parent'); // 수정
+//   console.log(parent);
+//   parent && parent.remove(); // 수정
+// })
+
+// - 해제하지 않은 타이머
+// let a = 0;
+// const intervalId = setInterval(() => {
+//   a += 1;
+// }, 100)
+
+// setTimeout(() => {
+//   console.log(a);
+//   clearInterval(intervalId);
+// }, 1000)
+
+// - 잘못된 클로저 사용
+// const getFn = () => {
+//   let a = 0;
+//   return name => {
+//     // a += 1;
+//     // console.log(a);
+//     return `Hello ${name}~`;
+//   }
+// }
+
+// const fn = getFn();
+// console.log(fn('Roze'));
+// console.log(fn('Neo'));
+// console.log(fn('Lee'));
 
 //--------------------------------------------
 
 /** 콜 스택, 테스크 큐, 이벤트 루프 */
+
+// setTimeout(() => {
+//   console.log(1);
+// }, 0);
+
+// console.log(2);
+
+function a() {
+  console.log('A');
+  function b() {
+    // console.log('B');
+    setTimeout(() => {
+      console.log('B1');
+      console.log('B2');
+    })
+  }
+  b();
+}
+
+function c() {
+  console.log('C');
+}
+
+function first() {
+  a();
+  c();
+}
+function second() {
+  c();
+}
+
+first();
+second();
+
+
+
+
+
