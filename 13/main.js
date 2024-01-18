@@ -162,5 +162,5 @@ ___
 // console.log(str.match(/.+(?=과)/g));
 // console.log(str.match(/(?<=과).+/g));
 
-console.log(str.match(/\d{3}-\d{4}-\d{4}/g));
-console.log(str.match(/\w+@\w+\.\w+/g));
+// console.log(str.match(/\d{3}-\d{4}-\d{4}/g));
+// console.log(str.match(/\w+@\w+\.\w+/g));
