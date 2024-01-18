@@ -284,32 +284,32 @@
 
 // console.log(2);
 
-function a() {
-  console.log('A');
-  function b() {
-    // console.log('B');
-    setTimeout(() => {
-      console.log('B1');
-      console.log('B2');
-    })
-  }
-  b();
-}
+// function a() {
+//   console.log('A');
+//   function b() {
+//     // console.log('B');
+//     setTimeout(() => {
+//       console.log('B1');
+//       console.log('B2');
+//     })
+//   }
+//   b();
+// }
 
-function c() {
-  console.log('C');
-}
+// function c() {
+//   console.log('C');
+// }
 
-function first() {
-  a();
-  c();
-}
-function second() {
-  c();
-}
+// function first() {
+//   a();
+//   c();
+// }
+// function second() {
+//   c();
+// }
 
-first();
-second();
+// first();
+// second();
 
 
 
