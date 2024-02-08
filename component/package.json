@@ -1,7 +1,6 @@
 {
   "name": "etc",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "dev": "parcel ./index.html",
@@ -12,5 +11,6 @@
   "license": "ISC",
   "devDependencies": {
     "parcel": "^2.11.0"
-  }
+  },
+  "description": ""
 }
